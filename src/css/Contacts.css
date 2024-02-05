@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hammersmith+One&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+    font-family: 'Lato', 'Hammersmith One' sans-serif;
+}
+
+:root{
+    --gray: #2D2D2D;
+    --white: #FFFFFF;
+    --vivid-orange: #F16529;
+    --light-gray: #B5B5B5;
+    --dark-gray: #404040;
+    --Dark-Gray-Brown: #292727;
+    
+}
+
+.nav1 {
+    height: 50px;
+    background: linear-gradient(to right, var(--Dark-Gray-Brown) 30%, var(--gray) 70%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand1{
+    color: var(--white) !important; 
+    font-family: 'Hammersmith One';
+    font-weight: 400;
+    font-size: 50px;
+}
+
+.send{
+    width: 650px;
+    height: auto;
+    background-color: var(--gray);
+}
+
+.message{
+    font-family: 'Hammersmith One';
+    font-weight: 400;
+    font-size: 28px;
+    color: var(--white);
+    margin-left: 30px;
+}
+
+input{
+    background-color: #535353;
+    margin-bottom: 20px;
+}
+
+.input2{
+    width: 75%;
+    height: 300px;
+    border: 1px solid #535353;
+    border-radius: 5px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+}
+
+.input, .input1 {
+    width: 75%;
+    border: 1px solid #535353;
+    border-radius: 5px;
+}
+
+.input:focus, .input1:focus, .input2:focus {
+    outline: none;
+    border-color: #404040; 
+}
+
+
+.button button{
+    border-radius: 3px;
+    width: 200px;
+    border: none;
+    padding: 5px;
+}

@@ -1,0 +1,143 @@
+/* Project.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hammersmith+One&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+    font-family: 'Lato', 'Hammersmith One' sans-serif;
+}
+
+:root{
+    --gray: #2D2D2D;
+    --white: #FFFFFF;
+    --vivid-orange: #F16529;
+    --light-gray: #B5B5B5;
+    --dark-gray: #404040;
+    --lime-green: #83CD29;
+}
+a{
+    text-decoration: none;
+}
+
+.project{
+    display: flex;
+}
+
+.headers{
+    width: 600px;
+    height: 785px;
+}
+
+.full1{
+    background-color: var(--white);
+    color: var(--vivid-orange);
+    font-family: 'Hammersmith One';
+    font-weight: 400;
+    font-size: 18px;
+    width: 242px;
+    height: 30px;
+    text-align: center;
+    margin-top: 10px;
+    border-radius: 3px;
+}
+
+.name1{
+    font-family: 'Hammersmith One';
+    font-weight: 400;
+    font-size: 40px;
+    color: var(--white);
+}
+
+.lorem1{
+    width: 491px;
+    font-family: 'Lato';
+    font-weight: 400;
+    font-size: 18px;
+    color: var(--light-gray);
+}
+
+a.nom{
+    font-family: 'Lato';
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    width: 55%;
+    align-items: center;
+    
+}
+.nom p{
+    color: var(--light-gray);
+}
+.nom img{
+    height: 3px;
+    width: 40px;
+    align-self: center;
+}
+
+.proman{
+    padding-right: 70px;
+}
+.prowoman{
+    padding-right: 70px;
+}
+
+.cards{
+    width: 40%;
+    height: 900px;
+    color: #FFF;
+    display: flex;
+    /* gap: 0.5rem; */
+    background-color: #323232;
+}
+
+.cards1{
+    background-color: var(--dark-gray);
+    width: 200px;
+    height: 150px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+.java{
+    color: var(--vivid-orange);
+    margin-left: 10px;
+    font-family: 'Lato';
+    font-weight: 500;
+    font-size: 15px;
+}
+.java2{
+    color: var(--lime-green);
+    margin-left: 10px;
+    font-family: 'Lato';
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.farm{
+    font-family: 'Hammersmith One';
+    font-weight: 400;
+    font-size: 20px;
+    color: var(--white);
+    margin-left: 10px;
+    margin-right: 50px;
+}
+
+.git{
+    display: flex;
+    height: 10px;
+}
+.github{
+    color: var(--light-gray);
+    width: 45%;
+    font-size: 13px;
+    display: flex;
+    gap: 0.1rem;
+    align-items: center;
+    margin-left: 10px;
+}
+.github img{
+    height: 11px;
+}

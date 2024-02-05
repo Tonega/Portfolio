@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hammersmith+One&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+    font-family: 'Lato', 'Hammersmith One' sans-serif;
+}
+
+:root{
+    --gray: #2D2D2D;
+    --white: #FFFFFF;
+    --vivid-orange: #F16529;
+    --light-gray: #B5B5B5;
+    --dark-gray: #404040;
+}
+
+body{
+    background-color: #292727;
+}
+
+.head{
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.full{
+    background-color: var(--white);
+    color: var(--vivid-orange);
+    font-family: 'Hammersmith One';
+    font-weight: 400;
+    font-size: 18px;
+    width: 242px;
+    height: 30px;
+    text-align: center;
+    margin-top: 10px;
+    border-radius: 3px;
+}
+
+
+.name{
+    font-family: 'Hammersmith One';
+    font-weight: 400;
+    font-size: 40px;
+    color: var(--white);
+}
+
+.lorem{
+    font-family: 'Lato';
+    font-weight: 400;
+    font-size: 18px;
+    color: var(--light-gray);
+}
+
+.list{
+    display: flex;
+    gap: 1rem;
+}
+
+.image{
+    background-image: url('../assets/images/circle.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 30px auto;
+}
+
+.image img{    
+    position: relative;
+    top: 10px;
+    width: 100%;
+}
+
+.link{
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.link a{
+    text-decoration: none; 
+    color: var(--light-gray);
+}
+
+.profile{ 
+    width: 45px;
+}
+
+.links{
+    display: flex;
+    gap: 0.6rem;
+}
+
+@media(min-width: 900px){
+    .head{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    .header{
+        margin-top: 50px;
+        width: 582px;
+    }
+
+    .name{
+        font-size: 65px;
+    }
+
+    .list{
+        display: flex;
+        gap: 2rem;
+        margin-bottom: 20px;
+    }
+
+    .link{
+        margin-top: 50px;
+    }
+
+    .image{
+        width: 450px;
+    }
+    
+    .image img{    
+        width: 500px;
+    }
+}
