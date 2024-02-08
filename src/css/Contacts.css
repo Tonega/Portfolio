@@ -27,7 +27,7 @@
 }
 
 .brand1{
-    color: var(--white) !important; 
+    color: var(--white) ; 
     font-family: 'Hammersmith One';
     font-weight: 400;
     font-size: 50px;
@@ -35,7 +35,6 @@
 
 .send{
     width: 650px;
-    height: auto;
     background-color: var(--gray);
 }
 

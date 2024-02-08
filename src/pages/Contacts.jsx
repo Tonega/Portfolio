@@ -1,16 +1,76 @@
 // Contacts.jsx
-import React from 'react'
+import React, { useState } from 'react'
 import '../css/Contacts.css'
 import { Link, NavLink, useLocation } from 'react-router-dom';
-import Container from 'react-bootstrap/Container';
+import { Container } from 'react-bootstrap';
+import { toast, Toaster } from 'react-hot-toast';
+import emailjs from '@emailjs/browser';
 import img1 from '../assets/images/Vector 1.svg'
 import vector from '../assets/images/Vector.svg'
 import profile from '../assets/images/profile.svg'
 import mail from '../assets/images/mail.svg'
 import github1 from '../assets/images/github.svg'
+import MessageSent from '../components/MessageSent';
 
 const Contacts = () => {
     const { pathname } = useLocation();
+    const [showModal, setShowModal] = useState(false);
+
+
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        const form = e.target;
+        const isValid = validateForm(form);
+
+        if (isValid) {
+            try {
+                await emailjs.sendForm(
+                    import.meta.env.VITE_REACT_APP_EMAILJS_SERVICE_ID,
+                    import.meta.env.VITE_REACT_APP_EMAILJS_TEMPLATE_ID,
+                    form,
+                    import.meta.env.VITE_REACT_APP_EMAILJS_USER_ID
+                );
+
+                toast.success('Form submitted successfully!');
+                form.reset();
+                setShowModal(true);
+            } catch (error) {
+                console.error('Error submitting form:', error);
+                toast.error('Error submitting form. Please try again.');
+            }
+        } else {
+            console.log('Form validation failed');
+        }
+    };
+
+    const validateForm = (form) => {
+        let isValid = true;
+        const subject = form.elements['subject'].value.trim();
+        const email = form.elements['email'].value.trim();
+        const message = form.elements['message'].value.trim();
+
+        if (subject === '') {
+            toast.error('Subject is required');
+            isValid = false;
+        }
+
+        const emailRegex = /^[a-zA-Z0-9._%+-]+@(gmail\.com|yahoo\.com|ymail\.com|outlook\.com|hotmail\.com|icloud\.com|aol\.com|live\.com|msn\.com|protonmail\.com|zoho\.com|mail\.ru|yandex\.ru)$/i;
+        if (email === '') {
+            toast.error('Email is required');
+            isValid = false;
+        } else if (!emailRegex.test(email)) {
+            toast.error('Invalid email address.');
+            isValid = false;
+        }
+
+        if (message === '' || message.length < 10 || message.length > 1000) {
+            toast.error('Message must be between 10 and 1000 characters');
+            isValid = false;
+        }
+
+        return isValid;
+    };
 
   return (
     <>
@@ -45,29 +105,39 @@ const Contacts = () => {
                 </div>
                 <div className="link">
                 <img className='profile' src={profile} alt="" />
-                <a className='links' href="mailto:thonieetega182@gmail.com" target="_blank" rel=""> <img src={mail} alt="" />Email me <img src={vector} alt="" /> </a>
-                <a className='links' href="https://github.com/Tonega" target="_blank" rel=""> <img src={github1} alt="" />Github <img src={vector} alt="" /> </a>
+                <Link to='' className='cl'>
+                    <img src={mail} alt='' className='c-img' /> Email Me{' '}
+                    <img src={vector} alt='' className='c-img' />
+                </Link>
+
+                <Link to='' className='cl'>
+                    <img src={github1} alt='' className='c-img' /> Github{' '}
+                    <img src={vector} alt='' className='c-img' />
+                </Link>
+
             </div>
                 </section>
             <div className="send">
                 <div className="a">
                 <h1 className='message'>Send A Message</h1>
                 </div>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <input className='input' type="text" placeholder='From:' name="form" id="" /> 
                 <input className='input1' type="text" placeholder='Subject:' name="subject" id="" />
-                <input className='input2' type="text" placeholder='Write message...' name="subject" id="" />
+                <input className='input2' type="text" placeholder='Write message...' name="message" id="" />
           </form>
 
             <div className="button text-center">
-                <button type="button" >
+                <button type="submit" >
                     Send Message
                 </button>
             </div>
             </div>
         </main>
         </Container>
-    </>
+        <Toaster position='top-center' />
+    {showModal && <MessageSent showModal={showModal} setShowModal={setShowModal} />}
+</>
   )
 }
 

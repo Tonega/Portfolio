@@ -2,7 +2,7 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Navbar from './NavBar';
 import '../css/Home.css'
-import pic from '../assets/images/Saly-13.png'
+import pic from '../assets/images/SALY-13.png'
 import BOOTSTRAP from '../assets/images/Bootstrap.svg'
 import NODE from '../assets/images/Node.svg'
 import HTML from '../assets/images/HTML.svg'

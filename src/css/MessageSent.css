@@ -36,7 +36,6 @@ cursor: pointer;
 height: 71px;
 flex-shrink: 0;
 margin-top: 2rem;
-margin-bottom: 8px;
 }
 
 .mod-h1{
@@ -70,21 +69,4 @@ font-size: 18px;
 font-style: normal;
 font-weight: 700;
 line-height: normal;
-}
-
-
-.pdf{
-    color: #F16529 !important;
-font-family: Lato;
-font-size: 16px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
-text-decoration-line: underline;
-}
-
-.center-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
